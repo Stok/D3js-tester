@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<head>
+<link rel="stylesheet" type="text/css" href="./d3plotstyle2.css">
+</head>
+<body>
+
+ <svg id="plot" width="1000" height="500"></svg>
+
+<script src="http://d3js.org/d3.v3.js"></script>
+<script src="./d3plot2b.js"></script>
+<script type="text/javascript">
+var makeData = function() {
+    var result = [];
+    for(i = 0; i < 5000; i++)
+    {
+      result.push({'x_val' : i, 'y_val' : 10 * Math.round(10000 *  Math.cos(0.2 * i) ) / 10000}) ;
+    }
+    return result;
+  }  
+  var data = makeData();
+  //alert(JSON.stringify(data));
+  plotData("#" + "plot", data);
+</script>
+</body>
+
